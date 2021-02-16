@@ -81,13 +81,13 @@ function date_compare(r1,r2) {
     //$.getJSON('https://sheets.googleapis.com/v4/spreadsheets/1VvaXyDbPiswnC1V49Y92jM4XcpDsJtQkWSGsmZ-82Sk/values/cooking?key=AIzaSyAfRXwQu3DM67Nh5GZm6-lD1W-bq79hvIQ', function(data)   {
     $.getJSON('https://sheets.googleapis.com/v4/spreadsheets/1Yo-gy-0JnUJRtg0uK8RUg6uv32vcrB0LSndlhTkDMXc/values/Events?key=AIzaSyCdZChtatuP0KOBYfHOtZiuHh4VVG3JyHs', function(data)   {
         event_list = get_data_array(data).sort(date_compare);
-		
-		if ( document.URL.includes("index.html") ) {
+		//if ( document.URL.includes("index.html") ) {
+		if ( (document.location.pathname === "/") || (document.URL.includes("index.html")) ) {
 			let d = new Date();
 			let i = 0;
 			let event_date = new Date(event_list[i].DATE);
 			
-			while ((i<event_list.length-1)&&(d > event_date)){
+			while ((i<event_list.length-1) && (d > event_date)){
 				i++;
 				event_date = new Date(event_list[i].DATE);
 			}
