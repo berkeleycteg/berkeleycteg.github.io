@@ -42,6 +42,15 @@ body {
   font-weight: 200;
 }
 
+.section_sub_header_small {
+  padding: 0.75rem;
+  line-height: 2.2;
+  font-size: 16px;
+  color: #003262;
+  font-weight: 200;
+}
+
+
 .section_header_links a{
   padding: .75rem;
   line-height: 2.2;
@@ -65,9 +74,17 @@ body {
 }
 
 .jumbo_img2{
-	background-image: url("resources/historic_berkeley_2.jpg");
+	background-image: url("resources/historic_berkeley_3.jpg");
+	background-size: contain;
 }
 
+.btn-link.btn-abstract{
+    outline: none !important;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+    color: black;
+}
 
 .memberbox {
     padding: 10px 0 0 0
@@ -80,7 +97,7 @@ body {
 }
 
 .memberimg {
-    width: 200px;
+    width: 100px;
     object-position: center;
 }
 
@@ -132,6 +149,11 @@ body {
   padding: .75rem;
   line-hight: 2.2;
   font-size: 1.5rem;
+  color: black;
+  font-weight: 200;
+}
+
+.grouplink {
   color: black;
   font-weight: 200;
 }
