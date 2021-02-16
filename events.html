@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Sudmant Lab Webpage">
     <meta name="author" content="Peter Sudmant">
-    <link rel="icon" href="favicon.ico">
     <title>CTEG</title>
 
     <!-- Bootstrap core CSS -->
@@ -26,7 +25,38 @@
            events
           </div>
             
-          UNDER CONTSTRUCTION
+        <template>
+          <div class="col-md-4">
+            <div class="card mb-4">
+              <div class="card-header">
+                  <div class="row">
+                    <div class="col" id="EVENT">
+                    </div>
+                    <div class="col" style='text-align: right;' id="DATE">
+                    </div>
+                  </div>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title" id=SPEAKER>Rori Rohlfs - SF State</h5>
+                <div class="bg-white border-top box-shadow">
+                </div>
+                <p class="card-text" id="TITLE">  </p>
+
+                <div id="accordion">
+                    <button id="abstract_button" class="btn btn-link btn-abstract" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                        Abstract
+                    </button>
+                  <div id="abstract_ID" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                  </div>
+                </div>
+               </div>
+            </div>
+          </div>
+        </template>
+
+        <div id=events>
+        </div>
+
 
 
         </div>
@@ -41,6 +71,7 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="dist/jquery-3.3.1.min.js"></script>
     <script src="dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="parse_events.js"></script>
     <script>
         $(function(){
           $("#tracker").load("tracker.html");
