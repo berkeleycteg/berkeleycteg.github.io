@@ -86,10 +86,11 @@ function date_compare(r1,r2) {
 			let d = new Date();
 			let i = 0;
 			let event_date = new Date(event_list[i].DATE);
-			
+		    event_date.setHours(22); 
 			while ((i<event_list.length-1) && (d > event_date)){
 				i++;
 				event_date = new Date(event_list[i].DATE);
+		        event_date.setHours(22); 
 			}
 			draw_events(event_list.slice(i,i+1));
 		}else if ( document.URL.includes("events.html") ) {
