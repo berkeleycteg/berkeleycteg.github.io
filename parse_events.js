@@ -2,15 +2,19 @@ var JSON_data;
 
 var event_styles = {
     "CTEG Seminar": {
-        "bg":"#505168",
+        "bg":"#90A9B7",
         "text":"white"
     },
     "PopGen JC":{
-        "bg":"#B3C0A4",
+        "bg":"#DDE8B9",
+        "text":"black"
+    },
+    "CCB Seminar":{
+        "bg":"#CB8589",
         "text":"white"
     },
     "default":{
-        "bg":"#DDE8B9",
+        "bg":"#505168",
         "text":"black"
     }
 };
