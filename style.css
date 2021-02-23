@@ -103,7 +103,9 @@ body {
 
 .memberimg {
     width: 100px;
-    object-position: center;
+    height: 100px;
+    object-fit: cover;
+    overflow: hidden;
 }
 
 
