@@ -7,6 +7,11 @@ body {
    margin-bottom: 150px;
 }
 
+
+.tester {
+    background-color:darkblue;
+}
+
 .footer {
    position: absolute;
    bottom: 0;
@@ -170,7 +175,6 @@ body {
   	font-weight: 350;
 }
 
-
 #map {
 position: absolute;
 top: 0;
@@ -181,3 +185,4 @@ width: 100%;
 pre {
     white-space: pre-wrap;
 }
+

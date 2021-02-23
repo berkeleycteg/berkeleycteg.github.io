@@ -1,6 +1,20 @@
 var JSON_data;
-var recipe_list;
-var recipe_tags;
+
+var event_styles = {
+    "CTEG Seminar": {
+        "bg":"#505168",
+        "text":"white"
+    },
+    "PopGen JC":{
+        "bg":"#B3C0A4",
+        "text":"white"
+    },
+    "default":{
+        "bg":"#DDE8B9",
+        "text":"black"
+    }
+};
+
 
 function get_data_array(data){
     
@@ -48,9 +62,23 @@ function date_compare(r1,r2) {
 			var temp = document.getElementsByTagName("template")[0];
 			var clon = temp.content.cloneNode(true);
 			let currdata = events_array[i];
-			
-			let curr_div = clon.getElementById("EVENT");
+		    
+			let curr_div = clon.getElementById("CARDHEADER");
+            
+            var bg_col = event_styles['default']['bg'];
+            var text_col = event_styles['default']['text'];
+
+            if (currdata.EVENT_TYPE in event_styles){
+                bg_col = event_styles[currdata.EVENT_TYPE]["bg"];
+                text_col = event_styles[currdata.EVENT_TYPE]["text"];
+            }
+            curr_div.style.backgroundColor = bg_col;
+            curr_div.style.color = text_col;
+
+			curr_div = clon.getElementById("EVENT");
 			curr_div.innerHTML=currdata.EVENT_TYPE;
+             
+
 
 			curr_div = clon.getElementById("DATE");
 			curr_div.innerHTML=currdata.DATE;
