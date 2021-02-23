@@ -53,6 +53,20 @@ function date_compare(r1,r2) {
 (function ($) {
   $(document).ready(function(){
 
+	function draw_announce(announce_array){ 
+		
+		let main_div = document.getElementById("announcements");
+		
+		for (let i = 0; i < announce_array.length; i++){
+			var temp = document.getElementById("announce_template");
+			var clon = temp.content.cloneNode(true);
+			let currdata = announce_array[i];
+            clon.getElementById("event_text").innerHTML=currdata.TEXT;
+		    main_div.appendChild(clon);
+        }
+            
+    }
+
 	function draw_events(events_array){ 
 		
 		let main_div = document.getElementById("events");
@@ -63,7 +77,8 @@ function date_compare(r1,r2) {
 		
 		for (let i = 0; i < events_array.length; i++){
 			
-			var temp = document.getElementsByTagName("template")[0];
+			var temp = document.getElementById("event_template");
+            
 			var clon = temp.content.cloneNode(true);
 			let currdata = events_array[i];
 		    
@@ -110,10 +125,8 @@ function date_compare(r1,r2) {
 		})
 	}
     
-    //$.getJSON('https://sheets.googleapis.com/v4/spreadsheets/1VvaXyDbPiswnC1V49Y92jM4XcpDsJtQkWSGsmZ-82Sk/values/cooking?key=AIzaSyAfRXwQu3DM67Nh5GZm6-lD1W-bq79hvIQ', function(data)   {
     $.getJSON('https://sheets.googleapis.com/v4/spreadsheets/1Yo-gy-0JnUJRtg0uK8RUg6uv32vcrB0LSndlhTkDMXc/values/Events?key=AIzaSyCdZChtatuP0KOBYfHOtZiuHh4VVG3JyHs', function(data)   {
         event_list = get_data_array(data).sort(date_compare);
-		//if ( document.URL.includes("index.html") ) {
 		if ( (document.location.pathname === "/") || (document.URL.includes("index.html")) ) {
 			let d = new Date();
 			let i = 0;
@@ -130,6 +143,12 @@ function date_compare(r1,r2) {
 		}
     });
 	
+    $.getJSON('https://sheets.googleapis.com/v4/spreadsheets/1Yo-gy-0JnUJRtg0uK8RUg6uv32vcrB0LSndlhTkDMXc/values/Announcements?key=AIzaSyCdZChtatuP0KOBYfHOtZiuHh4VVG3JyHs', function(data)   {
+        announce_list = get_data_array(data);
+		if ( (document.location.pathname === "/") || (document.URL.includes("index.html")) ) {
+			draw_announce(announce_list);
+        }
+    });
 
     
    	
