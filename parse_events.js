@@ -1,4 +1,5 @@
 var JSON_data;
+var event_list;
 
 var event_styles = {
     "CTEG Seminar": {
@@ -141,6 +142,19 @@ function date_compare(r1,r2) {
 		}else if ( document.URL.includes("events.html") ) {
 			draw_events(event_list.sort(date_compare));
 		}
+    });
+	
+  	$('#all').on('click', function(){
+		draw_events(event_list);
+    });
+  	$('#CTEG').on('click', function(){
+		draw_events(event_list.filter(curr_event => curr_event.EVENT_TYPE=="CTEG Seminar"));
+    });
+  	$('#CCB').on('click', function(){
+		draw_events(event_list.filter(curr_event => curr_event.EVENT_TYPE=="CCB Seminar"));
+    });
+  	$('#PopGen').on('click', function(){
+		draw_events(event_list.filter(curr_event => curr_event.EVENT_TYPE=="PopGen JC"));
     });
 	
     $.getJSON('https://sheets.googleapis.com/v4/spreadsheets/1Yo-gy-0JnUJRtg0uK8RUg6uv32vcrB0LSndlhTkDMXc/values/Announcements?key=AIzaSyCdZChtatuP0KOBYfHOtZiuHh4VVG3JyHs', function(data)   {
