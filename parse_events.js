@@ -98,8 +98,6 @@ function date_compare(r1,r2) {
 			curr_div = clon.getElementById("EVENT");
 			curr_div.innerHTML=currdata.EVENT_TYPE;
              
-
-
 			curr_div = clon.getElementById("DATE");
 			curr_div.innerHTML=currdata.DATE;
 			
@@ -108,6 +106,30 @@ function date_compare(r1,r2) {
 			
 			curr_div = clon.getElementById("TITLE");
 			curr_div.innerHTML=currdata.TITLE;
+		    
+            if (currdata.IMAGE_1){
+
+                curr_div = clon.getElementById("IMAGE");
+                let link = "https://drive.google.com/uc?id=" + currdata.IMAGE_1;
+                curr_div.src = link;
+
+                if (currdata.IMAGE_1 && currdata.IMAGE_2){
+                    curr_div = clon.getElementById("IMAGE_2");
+                    let link = "https://drive.google.com/uc?id=" + currdata.IMAGE_2;
+                    curr_div.src = link;
+                }else{
+                    curr_div = clon.getElementById("img_col1");
+                    curr_div.classList.remove("col-md-2");
+                    curr_div.classList.add("col-md-4");
+                    clon.getElementById("IMAGE_2").remove();
+                    clon.getElementById("img_col2").remove();
+                }
+            }
+            else{
+                curr_div = clon.getElementById("IMAGE");
+			    let link = "https://drive.google.com/uc?id=1KrxXeidcTDxfQzgLeR9czbLR7OVdvcr-";
+                curr_div.src = link;
+            }
 			
 			curr_div = clon.getElementById("abstract_ID");
 			curr_div.innerHTML=currdata.ABSTRACT;

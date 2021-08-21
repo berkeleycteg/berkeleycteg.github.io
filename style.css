@@ -8,6 +8,11 @@ body {
 }
 
 
+.padding-0{
+        padding-right:0;
+        padding-left:0;
+}
+
 .tester {
     background-color:darkblue;
 }
@@ -93,6 +98,13 @@ body {
 
 .memberbox {
     padding: 10px 0 0 0
+}
+
+
+.speakerphoto {
+  max-height: 100px;
+  margin: auto;    
+  display: block;
 }
 
 .labphoto {
