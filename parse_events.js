@@ -108,7 +108,6 @@ function date_compare(r1,r2) {
 			curr_div.innerHTML=currdata.TITLE;
 		    
             if (currdata.IMAGE_1){
-
                 curr_div = clon.getElementById("IMAGE");
                 let link = "https://drive.google.com/uc?id=" + currdata.IMAGE_1;
                 curr_div.src = link;
@@ -129,6 +128,11 @@ function date_compare(r1,r2) {
                 curr_div = clon.getElementById("IMAGE");
 			    let link = "https://drive.google.com/uc?id=1KrxXeidcTDxfQzgLeR9czbLR7OVdvcr-";
                 curr_div.src = link;
+                curr_div = clon.getElementById("img_col1");
+                curr_div.classList.remove("col-md-2");
+                curr_div.classList.add("col-md-4");
+                clon.getElementById("IMAGE_2").remove();
+                clon.getElementById("img_col2").remove();
             }
 			
 			curr_div = clon.getElementById("abstract_ID");
@@ -160,7 +164,8 @@ function date_compare(r1,r2) {
 				event_date = new Date(event_list[i].DATE);
 		        event_date.setHours(22); 
 			}
-			draw_events(event_list.slice(i,i+1));
+			draw_events(event_list.sort(date_compare).slice(i,i+2));
+
 		}else if ( document.URL.includes("events.html") ) {
 			draw_events(event_list.sort(date_compare));
 		}
