@@ -10,6 +10,10 @@ var event_styles = {
         "bg":"#DDE8B9",
         "text":"black"
     },
+    "Popgen JC":{
+        "bg":"#DDE8B9",
+        "text":"black"
+    },
     "CCB Seminar":{
         "bg":"#CB8589",
         "text":"white"
